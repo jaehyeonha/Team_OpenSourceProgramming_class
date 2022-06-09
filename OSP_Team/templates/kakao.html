@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>카카오</title>
+</head>
+<body>
+    <h2>카카오 채용 공고</h2>
+    <ul>
+        {% for key, value in result.items() %}
+            <li>
+            {{key}}</br> {{value}}</br>
+            {% for key1, value1 in link.items() %}
+                {% if key == key1 %}
+                    {{value1}} </br>
+                {% endif %}
+            {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+    <button onclick="history.back()">돌아가기</button>
+</body>
+</html>
+
+
