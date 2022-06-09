@@ -15,25 +15,26 @@ def contents():
         company = request.form['company']
 
         if (company.__eq__("kakao")):
-            url = "https://careers.kakao.com/jobs"
-            req = requests.get(url)
-            soup = BeautifulSoup(req.text, 'html.parser')
-
-            list_area = soup.find_all('div', class_='wrap_info')
+            kakao_url = "https://careers.kakao.com/jobs"
             res_dic = {}
             link_dic = {}
-            for job in list_area:
-                link = "https://careers.kakao.com" + job.a["href"]
-                title = job.find_all('h4', class_='tit_jobs')
-                for text in title:
-                    title_text = text.get_text()
-                tag = job.find_all('a', class_='link_tag')
-                tags = []
-                for item in tag:
-                    tags.append(item.get_text().strip())
+            for i in range(1, 7):
+                url = kakao_url + "?page=" + str(i)
+                req = requests.get(url)
+                soup = BeautifulSoup(req.text, 'html.parser')
+                list_area = soup.find_all('div', class_='wrap_info')
+                for job in list_area:
+                    link = "https://careers.kakao.com" + job.a["href"]
+                    title = job.find_all('h4', class_='tit_jobs')
+                    for text in title:
+                        title_text = text.get_text()
+                    tag = job.find_all('a', class_='link_tag')
+                    tags = []
+                    for item in tag:
+                        tags.append(item.get_text().strip())
 
-                res_dic[title_text] = tags
-                link_dic[title_text] = link
+                    res_dic[title_text] = tags
+                    link_dic[title_text] = link
 
             return render_template('kakao.html', result=res_dic, link=link_dic)
 
@@ -43,6 +44,30 @@ def contents():
         #     soup = BeautifulSoup(req.text, 'html.parser')
         #
         #     return render_template('naver.html')
+
+        if (company.__eq__("line")):
+            url = "https://careers.linecorp.com/jobs?ca=Engineering"
+
+            req = requests.get(url)
+            soup = BeautifulSoup(req.text, 'html.parser')
+
+            res_dic = {}
+            link_dic = {}
+
+            for job in soup.find('ul', class_="job_list").find_all('li'):
+                link = "https://careers.linecorp.com/" + job.find('a')["href"]
+                title = job.find_all('h3', class_='title')
+                for text in title:
+                    title_text = text.get_text()
+                tag = job.find_all('div', class_='text_filter')
+                tags = []
+                for item in tag:
+                    tags.append(item.get_text().strip())
+
+                res_dic[title_text] = tags
+                link_dic[title_text] = link
+
+            return render_template('line.html', result=res_dic, link=link_dic)
 
 if __name__=='__main__':
     app.run()

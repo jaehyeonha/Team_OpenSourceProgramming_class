@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>카카오</title>
+    <title>라인</title>
 </head>
 <body>
-    <h2>카카오 채용 공고</h2>
+    <h2>라인 채용 공고</h2>
     <ul>
         {% for key, value in result.items() %}
             <li>
-            {{key}}</br> {{value.0}} {{value.1}} {{value.2}} {{value.3}}</br>
+            {{key}}</br> {{value.0}}</br>
             {% for key1, value1 in link.items() %}
                 {% if key == key1 %}
                     {{value1}} </br>
