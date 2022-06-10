@@ -9,7 +9,7 @@
     <ul>
         {% for key, value in result.items() %}
             <li>
-            {{key}}</br> {{value}}</br>
+            {{key}}</br> {{value.0}}</br>
             {% for key1, value1 in link.items() %}
                 {% if key == key1 %}
                     {{value1}} </br>

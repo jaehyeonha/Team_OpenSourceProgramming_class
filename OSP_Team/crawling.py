@@ -5,32 +5,27 @@ import requests
 from bs4 import BeautifulSoup
 
 kakao_url = "https://careers.kakao.com/jobs"
-naver_url = "https://recruit.navercorp.com/cnts/tech"
 res_dic = {}
 link_dic = {}
-
 for i in range(1, 7):
     url = kakao_url + "?page=" + str(i)
-    print(url)
     req = requests.get(url)
     soup = BeautifulSoup(req.text, 'html.parser')
     list_area = soup.find_all('div', class_='wrap_info')
     for job in list_area:
         link = "https://careers.kakao.com" + job.a["href"]
-        title = job.find_all('h4', class_='tit_jobs')
-        for text in title:
-            title_text = text.get_text()
+        title = job.find('h4', class_='tit_jobs').text
+
         tag = job.find_all('a', class_='link_tag')
         tags = []
-        for item in tag:
-            tags.append(item.get_text().strip())
+    for item in tag:
+        tags.append(item.get_text().strip())
 
-        res_dic[title_text] = tags
-        link_dic[title_text] = link
+        res_dic[title] = tags
+        link_dic[title] = link
 
-#print(res_dic)
+print(res_dic)
 print(link_dic)
-
 # last_height = driver.execute_script("return document.body.scrollHeight")
 #
 # while True:
