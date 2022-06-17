@@ -94,17 +94,34 @@ def contents():
 
             for job in soup.find('ul', class_="job_list").find_all('li'):
                 link = "https://careers.linecorp.com/" + job.find('a')["href"]
-                title = job.find('h4', class_='tit_jobs').text
+                title = job.find('h3', class_='title').text
                 tag = job.find_all('div', class_='text_filter')
                 tags = []
                 for item in tag:
                     tags.append(item.get_text().strip())
 
-                if (title != None & tags != None & link != None):
-                    res_dic[title] = tags
-                    link_dic[title] = link
+                res_dic[title] = tags
+                link_dic[title] = link
 
             return render_template('line.html', result=res_dic, link=link_dic)
+
+        if (company.__eq__("coupang")):
+            url = 'https://www.coupang.jobs/kr/jobs/?department=Ecommerce+Engineering&department=Play+Engineering&department=Product+UX&department=Search+and+Discovery&department=Search+and+Discovery+Core+Infrastructure&department=Cloud+Platform&department=Corporate+IT&department=eCommerce+Product&department=FTS+(Fulfillment+and+Transportation+System)&department=Marketplace%2c+Catalog+%26+Pricing+Systems&department=Program+Management+Office&department=Customer+Experience+Product'
+            req = requests.get(url)
+            soup = BeautifulSoup(req.text, 'html.parser')
+
+            list_area = soup.find_all('div', class_='card-body')
+            link_dic = {}
+
+            for job in list_area:
+                link = "https://www.coupang.jobs" + job.a["href"]
+                title = job.find_all('a', class_='stretched-link')
+                for text in title:
+                    title_text = text.get_text()
+
+                link_dic[title_text] = link
+
+            return render_template('coupang.html', link=link_dic)
 
 if __name__=='__main__':
     app.run()
