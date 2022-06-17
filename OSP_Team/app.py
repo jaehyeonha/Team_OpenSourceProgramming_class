@@ -100,8 +100,9 @@ def contents():
                 for item in tag:
                     tags.append(item.get_text().strip())
 
-                res_dic[title] = tags
-                link_dic[title] = link
+                if (title != None & tags != None & link != None):
+                    res_dic[title] = tags
+                    link_dic[title] = link
 
             return render_template('line.html', result=res_dic, link=link_dic)
 
