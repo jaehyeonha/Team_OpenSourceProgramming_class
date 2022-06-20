@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>쿠팡</title>
+</head>
+
+<body>
+    <h2>쿠팡 채용 공고</h2>
+    <ul>
+        {% for key1, value1 in link.items() %}
+        <li>
+            {{key1}} </br>
+            {{value1}} </br>
+        </li>
+        {% endfor %}
+    </ul>
+    <button onclick="history.back()">돌아가기</button>
+</body>
+
+</html>

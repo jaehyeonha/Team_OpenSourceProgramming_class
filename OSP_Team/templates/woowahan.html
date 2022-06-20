@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배달의 민족</title>
+</head>
+<body>
+    <h2>배달의 민족 채용 공고</h2>
+    <ul>
+        {% for key, value in result.items() %}
+            <li>
+            {{key}}</br> {{value.0}} {{value.1}} {{value.2}} {{value.3}}</br>
+            {% for key1, value1 in link.items() %}
+                {% if key == key1 %}
+                    {{value1}} </br>
+                {% endif %}
+            {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+    <button onclick="history.back()">돌아가기</button>
+
+</body>
+</html>
