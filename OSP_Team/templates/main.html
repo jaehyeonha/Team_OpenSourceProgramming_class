@@ -11,8 +11,21 @@
         <input type="checkbox" name="company" value="naver">네이버</br>
         <input type="checkbox" name="company" value="line">라인</br>
         <input type="checkbox" name="company" value="coupang">쿠팡</br>
-        <input type="checkbox" nema="company" value="woowahan">배달의 민족</br>
+        <input type="checkbox" name="company" value="woowahan">배달의 민족</br>
+        <input type="checkbox" name="company" value="dangen">당근 마켓</br>
         <button type="submit" style="width:100px;">크롤링하기</button>
     </form>
+
+    {% for key, value in result.items() %}
+            <li>
+            {{key}}</br> {{value.0}} </br>
+            {% for key1, value1 in tag.items() %}
+                {% if key == key1 %}
+                    {{value1.0}} {{value1.1}} {{value1.2}} {{value1.3}} </br>
+                {% endif %}
+            {% endfor %}
+                {{value.1}} </br>
+            </li>
+    {% endfor %}
 </body>
 </html>
