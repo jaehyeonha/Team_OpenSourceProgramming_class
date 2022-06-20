@@ -117,7 +117,9 @@ def contents():
                 link = "https://www.coupang.jobs" + job.a["href"]
                 title = job.find_all('a', class_='stretched-link')
                 for text in title:
-                    title_text = text.get_text()
+                    title_text = text.get_text(
+
+                    )
 
                 link_dic[title_text] = link
 
