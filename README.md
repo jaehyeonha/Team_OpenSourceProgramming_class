@@ -33,5 +33,5 @@
 
 **시연 영상**
 
-풀영상은 동영상 파일을 다운로드 하시면 됩니다. <br>
+풀영상은 시연영상 파일 내에 있는 구글 드라이브를 확인 하시면 됩니다. <br>
 <img src="https://user-images.githubusercontent.com/81686317/174798224-230806b8-610c-41ca-83bd-69daf4ab7250.gif">
