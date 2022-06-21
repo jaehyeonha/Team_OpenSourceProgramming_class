@@ -1,24 +1,192 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>webpage crawling</title>
-</head>
-<body>
-    <h2>기업 인턴 채용 크롤링 하기</h2>
-    <form method="POST" action="/contents" autocomplete="off">
-        <input type="checkbox" name="company" value="kakao">카카오</br>
-        <input type="checkbox" name="company" value="naver">네이버</br>
-        <input type="checkbox" name="company" value="line">라인</br>
-        <input type="checkbox" name="company" value="coupang">쿠팡</br>
-        <input type="checkbox" name="company" value="woowahan">배달의 민족</br>
-        <input type="checkbox" name="company" value="dangen">당근 마켓</br>
-        <button type="submit" style="width:100px;">크롤링하기</button>
-    </form>
+<html lang="en">
 
-    {% for key, value in result.items() %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Agency - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading"></div>
+            <div class="masthead-heading text-uppercase">인턴 채용 정보를 한 곳에!</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">시작하기</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">서비스</h2>
+                <h3 class="section-subheading text-muted"></h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                </div>
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">저희 웹사이트는 대기업의 인턴 모집 공고를 직무별로 한 눈에 볼 수 있도록 제공합니다.</h4>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">카테고리</h2>
+                <h3 class="section-subheading text-muted">어떤 기업의 인턴 공고를 보고 싶으신가요?</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!--item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="naver" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                        src="https://blog.kakaocdn.net/dn/CNxUY/btqw7dnElRU/HuVZgvpT6J8n4aEYFathEk/img.jpg" />
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">네이버</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!--item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="kakao" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                        src="https://blog.kakaocdn.net/dn/bPWm4U/btqw8CtgkMu/pYxOoDLchCJHKrRkhElo7k/img.jpg"/>
+
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">카카오</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!--item 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="line" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                    src="{{ url_for('static', filename='assets/img/line0.jpeg') }}"
+                                        width = 450px height = 300px alt = .../>
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">라인</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!--item 4-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="coupang" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                    src="{{ url_for('static', filename='assets/img/cou0.png') }}"/>
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">쿠팡</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!--item 5-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="woowahan" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                        src="{{ url_for('static', filename='assets/img/wowa0.jpg') }}"/>
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">배달의 민족</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!--item 6-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal">
+                            <form method="POST" action="/contents" autocomplete="off">
+                                <button type="submit" name="company" value="daangn" class="p-0">
+                                    <div class="portfolio-hover">
+                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                    </div>
+                                    <img class="img-fluid"
+                                        src="{{ url_for('static', filename='assets/img/daangn0.jpg') }}"/>
+                                </button>
+                            </form>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">당근마켓</div>
+                            <div class="portfolio-caption-subheading text-muted"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h2>실시간 채용 시장 순위</h2>
+    <ul>
+         {% for key, value in result.items() %}
             <li>
-            {{key}}</br> {{value.0}} </br>
+            {{key}}</br> {{value.0}}
             {% for key1, value1 in tag.items() %}
                 {% if key == key1 %}
                     {{value1.0}} {{value1.1}} {{value1.2}} {{value1.3}} </br>
@@ -26,6 +194,8 @@
             {% endfor %}
                 {{value.1}} </br>
             </li>
-    {% endfor %}
+        {% endfor %}
+    </ul>
 </body>
+
 </html>

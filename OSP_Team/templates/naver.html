@@ -10,6 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Jua&display=swap');
         font1{
             font-family: 'Jua', sans-serif;}
+        ul li {list-style-type: none; float: left; margin-left 100px;}
     </style>
 </head>
 
@@ -24,16 +25,16 @@
     <br/><br/>
     <font1 style="font-size: 1.2em;">
        <ul>
-        {% for key, value in result.items() %}
-            <li>
-            {{key}}</br> {{value.0}}</br>
-            {% for key1, value1 in link.items() %}
-                {% if key == key1 %}
-                    {{value1}} </br>
-                {% endif %}
-            {% endfor %}
-            </li>
-        {% endfor %}
+           {% for key, value in result.items() %}
+           <li>
+                {% for key1, value1 in link.items() %}
+                    {% if key == key1 %}
+                        <a href = {{value1}}> {{key}}</a> </br>
+                    {% endif %}
+                {% endfor %}
+                {{value.0}} {{value.1}} {{value.2}} {{value.3}}</br>
+           </li>
+           {% endfor %}
         </ul>
     </font1>
     <br>

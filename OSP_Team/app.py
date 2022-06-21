@@ -75,7 +75,10 @@ def contents():
 
         if (company.__eq__("naver")):
             url = "https://recruit.navercorp.com/rcrt/list.do?srchClassCd=1000000"
-            driver = webdriver.Chrome('C:\chromedriver_win32\chromedriver.exe')
+            options = webdriver.ChromeOptions()
+            options.add_experimental_option("excludeSwitches", ["enable-logging"])
+            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
             driver.get(url)
             driver.implicitly_wait(5)
 
@@ -194,7 +197,7 @@ def contents():
 
             return render_template('woowahan.html', result=res_dic, link=link_dic)
 
-        if (company.__eq__('dangen')):
+        if (company.__eq__('daangn')):
             url = 'https://team.daangn.com/jobs/'
             req = requests.get(url)
             soup = BeautifulSoup(req.text, 'html.parser')
@@ -209,7 +212,7 @@ def contents():
                     title_text = text.get_text()
                 link_dic[title_text] = link
 
-            return render_template('dangen.html', link=link_dic)
+            return render_template('daangn.html', link=link_dic)
 
 if __name__=='__main__':
     app.run()
