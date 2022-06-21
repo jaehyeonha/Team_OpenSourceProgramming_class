@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo apt-get python3-pip
 pip install --upgrade pip
 
 pip install flask
