@@ -24,10 +24,12 @@ def home():
     # key가 회사 이름, values는 태그 리스트
     tags_dic = {}
 
+    cnt = 1
     for job in list_area.find_all('li'):
         # 회사 이름
         company_data = job.find('div', class_="coTit")
         company = company_data.find('b').text
+        company = str(cnt) + ". " + company
 
         # 공고 제목 과 세부 페이지 링크
         info_data = job.find('div', class_="tit").find('a')
@@ -42,6 +44,7 @@ def home():
 
         res_dic[company] = [title, link]
         tags_dic[company] = tags
+        cnt = cnt + 1
 
     return render_template("main.html", result=res_dic, tag=tags_dic)
 
@@ -206,7 +209,7 @@ def contents():
             link_dic = {}
 
             for job in list_area.find_all('li', class_="c-deAcZv"):
-                link = "https://team.daangn.com/jobs" + job.a["href"]
+                link = "https://team.daangn.com" + job.a["href"]
                 title = job.find_all('h3', class_='c-boyXyq')
                 for text in title:
                     title_text = text.get_text()
