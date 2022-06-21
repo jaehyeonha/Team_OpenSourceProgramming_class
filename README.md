@@ -5,7 +5,7 @@
 
 ## 인턴 채용 정보를 한 곳에!
 인턴 채용 공고 조회 사이트 <br>
-(Linux Shell Script, Python, Flask, elasticsearch 기반 웹서비스)
+(Linux Shell Script, Python, Flask 기반 웹서비스)
 
 **실행 과정**
 1. 실행 쉘 스크립트 파일을 실행해 필요한 모듈을 다운받고, app.py가 실행됩니다.
@@ -17,5 +17,9 @@
 5. 되돌아 가는 버튼을 누르면 다시 메인 페이지로 들어갈 수 있습니다.
 6. main 페이지에서 추가로 일간 채용 Top10 크롤링 정보를 확인할 수 있고, <br>
    제목을 누르면 세부 사이트로 연결해 내용을 확인할 수 있습니다.
+
+**유의 사항**
+- selenium 기반 웹크롤링을 위해서는 chrome webdriver version이 사용자의 chrome version과 맞아야 하기 때문에 쉘 파일을 실행해도 본인의 버전과 일치하지 않으면 크롤링이 제대로 이루어 지지 않을 수도 있습니다. (version 102.0.5005.61 으로 진행)
+- app.py가 제대로 실행되지 않은 경우, [잡코리아 사이트](https://www.jobkorea.co.kr/Top100/?Main_Career_Type=1&Search_Type=1&BizJobtype_Bctgr_Code=10016&BizJobtype_Bctgr_Name=IT%C2%B7%EC%9D%B8%ED%84%B0%EB%84%B7&BizJobtype_Code=0&BizJobtype_Name=IT%C2%B7%EC%9D%B8%ED%84%B0%EB%84%B7+%EC%A0%84%EC%B2%B4&Major_Big_Code=0&Major_Big_Name=%EC%A0%84%EC%B2%B4&Major_Code=0&Major_Name=%EC%A0%84%EC%B2%B4&Edu_Level_Code=9&Edu_Level_Name=%EC%A0%84%EC%B2%B4&Edu_Level_Name=%ED%95%99%EB%A0%A5+%EC%A0%84%EC%B2%B4&MidScroll=0)에 들어가 보안코드를 입력하는 과정을 거쳐야 합니다. (사이트 내 보안정책)
 
 **시연 영상**
