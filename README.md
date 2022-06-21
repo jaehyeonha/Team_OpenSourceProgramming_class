@@ -7,6 +7,14 @@
 인턴 채용 공고 조회 사이트 <br>
 (Linux Shell Script, Python, Flask 기반 웹서비스)
 
+**담당 파트**
+1. Backend - 유지예, 송혜경
+- Data Crawling
+- Elasticsearch data store 
+2. FrontEnd - 최표선
+- main page
+- crawling page
+
 **실행 과정**
 1. 실행 쉘 스크립트 파일을 실행해 필요한 모듈을 다운받고, app.py가 실행됩니다.
 2. 메인 페이지에 들어가면 채용 정보를 확인할 수 있는 6개의 IT기업이 있습니다.
