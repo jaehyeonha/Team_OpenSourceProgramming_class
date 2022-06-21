@@ -29,5 +29,6 @@
 **유의 사항**
 - selenium 기반 웹크롤링을 위해서는 chrome webdriver version이 사용자의 chrome version과 맞아야 하기 때문에 쉘 파일을 실행해도 본인의 버전과 일치하지 않으면 크롤링이 제대로 이루어 지지 않을 수도 있습니다. (version 102.0.5005.61 으로 진행)
 - app.py가 제대로 실행되지 않은 경우, [잡코리아 사이트](https://www.jobkorea.co.kr/Top100/?Main_Career_Type=1&Search_Type=1&BizJobtype_Bctgr_Code=10016&BizJobtype_Bctgr_Name=IT%C2%B7%EC%9D%B8%ED%84%B0%EB%84%B7&BizJobtype_Code=0&BizJobtype_Name=IT%C2%B7%EC%9D%B8%ED%84%B0%EB%84%B7+%EC%A0%84%EC%B2%B4&Major_Big_Code=0&Major_Big_Name=%EC%A0%84%EC%B2%B4&Major_Code=0&Major_Name=%EC%A0%84%EC%B2%B4&Edu_Level_Code=9&Edu_Level_Name=%EC%A0%84%EC%B2%B4&Edu_Level_Name=%ED%95%99%EB%A0%A5+%EC%A0%84%EC%B2%B4&MidScroll=0)에 들어가 보안코드를 입력하는 과정을 거쳐야 합니다. (사이트 내 보안정책)
+- python3가 linux 환경에 깔려있어야 한다.
 
 **시연 영상**
