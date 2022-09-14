@@ -8,7 +8,7 @@
 (Linux Shell Script, Python, Flask 기반 웹서비스)
 
 **담당 파트**
-1. Backend - 유지예, 송혜경
+1. Backend - 유지예, 송혜경, 하재현
 - Data Crawling
 - Elasticsearch data store 
 2. FrontEnd - 최표선, 하재현
