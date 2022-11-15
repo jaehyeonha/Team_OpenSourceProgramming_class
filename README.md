@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Final_OSP Team Project
+# Team_OpenSourceProgramming_class
 2022_1 오픈소스프로그래밍 9조<br>
 *collaborator: 유지예, 송혜경, 최표선, 하재현* 
 <br>
@@ -37,5 +37,3 @@
 풀영상은 시연영상 파일 내에 있는 구글 드라이브를 확인 하시면 됩니다. <br>
 <img src="https://user-images.githubusercontent.com/81686317/174798224-230806b8-610c-41ca-83bd-69daf4ab7250.gif">
 =======
-# Team_OpenSourceProgramming_class
->>>>>>> f556a6a5f868f6198978f7fca542af3e48779665
