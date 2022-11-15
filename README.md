@@ -1,5 +1,5 @@
 # Team_OpenSourceProgramming_class
-2022_1 오픈소스프로그래밍 9조<br>
+2022-1 오픈소스프로그래밍 9조<br>
 *collaborator: 유지예, 송혜경, 최표선, 하재현* 
 <br>
 
